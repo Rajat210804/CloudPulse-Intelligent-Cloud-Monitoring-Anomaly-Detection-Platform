@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CloudPulse · System overview</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/dashboard.js" defer></script>
+</head>
+<body>
+  <header>
+    <a class="brand" href="/" aria-label="CloudPulse home"><span class="logo">∿</span> CloudPulse</a>
+    <span class="header-note">A little clarity for your cloud.</span>
+    <span id="connection" class="connection" role="status">Connecting</span>
+  </header>
+  <main>
+    <div class="heading">
+      <div><p class="eyebrow">YOUR INFRASTRUCTURE, AT A GLANCE</p><h1>System overview<span>.</span></h1>
+        <p class="subtitle">Keep an eye on the ordinary. Catch the unusual.</p></div>
+      <label class="server-label">Monitoring server<select id="server"><option value="">Waiting for data</option></select></label>
+    </div>
+    <section class="summary" aria-label="Current resource usage">
+      <article class="card"><div class="card-label">CPU usage <span class="symbol purple">◈</span></div><p class="value" id="cpu">—</p><div class="meter"><span id="cpu-bar"></span></div><p>Processing power in use</p></article>
+      <article class="card"><div class="card-label">Memory usage <span class="symbol blue">▤</span></div><p class="value" id="memory">—</p><div class="meter blue-meter"><span id="memory-bar"></span></div><p>Memory in use</p></article>
+      <article class="card"><div class="card-label">Disk usage <span class="symbol mint">◫</span></div><p class="value" id="disk">—</p><div class="meter mint-meter"><span id="disk-bar"></span></div><p>Storage space in use</p></article>
+      <article class="card health-card"><div class="card-label">Latest reading <span class="symbol mint">♡</span></div><p id="health" class="health-value">Waiting</p><p id="health-detail">No readings received yet</p><span class="small-tag">Isolation Forest + usage limits</span></article>
+    </section>
+    <section class="panel chart-panel">
+      <div class="panel-heading"><div><h2>Resource activity</h2><p>Recent readings from your selected server</p></div><div class="legend"><span class="cpu-dot">CPU</span><span class="memory-dot">Memory</span><span class="disk-dot">Disk</span></div></div>
+      <div class="chart-wrap">
+        <svg id="chart" viewBox="0 0 1000 245" role="img" aria-label="Resource usage over time, from zero to one hundred percent"></svg>
+        <p id="empty" class="empty-chart">No metrics yet. Waiting for a server to report.</p>
+      </div>
+      <div class="chart-footer"><span id="chart-start">No history yet</span><span id="chart-count">0 readings</span><span id="chart-end">Now</span></div>
+    </section>
+    <section class="panel">
+      <div class="panel-heading"><div><h2>Recent alerts <span id="alert-count" class="badge">0</span></h2><p>Saved automatically when a reading needs attention</p></div><span class="small-tag">Latest 20</span></div>
+      <div class="table-scroll"><table><thead><tr><th>SERVER</th><th>WHAT HAPPENED</th><th>CPU</th><th>RECEIVED</th></tr></thead><tbody id="alerts"><tr><td colspan="4" class="empty-alert">No alerts to show yet.</td></tr></tbody></table></div>
+    </section>
+    <footer><span>CloudPulse <span class="footer-dot">·</span> Built to keep you in the know.</span><span id="updated">Refreshes every 5 seconds</span></footer>
+  </main>
+</body>
+</html>
