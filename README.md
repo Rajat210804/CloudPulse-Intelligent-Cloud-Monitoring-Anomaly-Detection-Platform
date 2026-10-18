@@ -2,7 +2,7 @@
 
 **Intelligent Cloud Monitoring & Anomaly Detection Platform**
 
-CloudPulse tracks CPU, memory, and disk usage across your servers. Pick a server, watch its recent activity, and check the alerts when something looks off.
+CloudPulse tracks CPU, memory, and disk usage across your servers. Pick a server, tap a resource card to explore its activity, and open an alert when something looks off. Pulse guide explains the readings in plain language.
 
 **Python · FastAPI · PostgreSQL · Scikit-learn · AWS CloudWatch · Docker**
 
